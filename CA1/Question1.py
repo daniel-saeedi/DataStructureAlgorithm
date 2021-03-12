@@ -35,5 +35,6 @@ def find_gcd_max(n,k,bags,biggest_bag) :
 def main() :
     n,k,bags,biggest_bag = read_input()
     gcd_max = find_gcd_max(n,k,bags,biggest_bag)
-    print(gcd_max)
+    print(gcd_max) 
+
 main()

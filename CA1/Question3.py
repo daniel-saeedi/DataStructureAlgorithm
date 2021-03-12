@@ -1,4 +1,4 @@
-""" Calculates prime numbers from 1 to sqrt(n) """
+""" Calculating prime numbers from 1 to sqrt(n). You can uncomment this : """
 # from itertools import compress
 #n = 10**5
 # def primes(n):
@@ -40,7 +40,7 @@ def factorization(n, primeslist):
     return pf
 
 """ Returns an unsorted list of the divisors of n """
-def insert_divisors(n, primeslist, counter_dict):
+def insert_divisors(n, primeslist, counter_dict) :
     divs = [1]
     for p, e in factorization(n, primeslist):
         divs += [x*p**k for k in range(1,e+1) for x in divs]
@@ -53,16 +53,18 @@ def count_divisors(query, counter_dict):
     return 0
   return counter_dict[query]
 
-i = 1
-counter_dict = {}
-max_lines = int(input())
-while i <= max_lines :
+def main() :
+  i = 1
+  counter_dict = {}
+  max_lines = int(input())
+  while i <= max_lines :
     a,b = input().split()
     a = int(a)
     b = int(b)
     if a == 1 :
         numbers_set = insert_divisors(b, primeslist, counter_dict)
-        # print('counter_dict', counter_dict)
     else :
         print(count_divisors(b, counter_dict))
     i += 1
+
+main()
