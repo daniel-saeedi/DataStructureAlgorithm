@@ -21,7 +21,7 @@ def read_input() :
 def find_gcd_max(n,k,bags,biggest_bag) :
     gcd_max = 1
     add_to_bags = [0]*n
-    for gcd in range(2,biggest_bag+1) :
+    for gcd in range(2,biggest_bag+k+1) :
         for idx,bag in enumerate(bags) :
             remainder = bag%gcd
             x = 0
